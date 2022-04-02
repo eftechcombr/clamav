@@ -2,7 +2,7 @@ from debian:stable-slim
 
 RUN apt-get update \
   && apt-get --no-install-recommends install -y clamav-daemon clamav-freshclam \
-  && rm -rf /var/lib/apt/lists/
+  && rm -rf /var/lib/apt/lists/*
 
 ADD clamd.conf /etc/clamav/
 
