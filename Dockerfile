@@ -1,4 +1,4 @@
-from debian:stable-slim
+FROM debian:stable-slim
 
 RUN apt-get update \
   && apt-get --no-install-recommends install -y clamav-daemon clamav-freshclam 
