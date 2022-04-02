@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:10
 
 RUN apt-get update \
   && apt-get --no-install-recommends install -y clamav-daemon clamav-freshclam ca-certificate \
