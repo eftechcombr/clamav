@@ -1,12 +1,12 @@
 FROM debian:stable-slim
 
 RUN apt-get update \
-  && apt-get --no-install-recommends install -y clamav-daemon clamav-freshclam 
+  && apt-get --no-install-recommends install -y clamav-daemon clamav-freshclam ca-certificate \
+  && rm -rf /var/lib/apt/lists/*
 
 ADD clamd.conf /etc/clamav/
 
-RUN freshclam \
-  && rm -rf /var/lib/apt/lists/*
+RUN freshclam 
 
 EXPOSE 3310/tcp
 
