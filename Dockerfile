@@ -1,7 +1,7 @@
-FROM debian:10
+FROM debian:stable-slim
 
 RUN apt-get update \
-  && apt-get --no-install-recommends install -y clamav-daemon clamav-freshclam \
+  && apt-get --no-install-recommends install -y ca-certificates clamav-daemon clamav-freshclam \
   && rm -rf /var/lib/apt/lists/*
 
 ADD clamd.conf /etc/clamav/

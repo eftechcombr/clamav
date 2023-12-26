@@ -1,0 +1,7 @@
+version: "3.5"
+services:
+  clamav:
+    image: eftechcombr/clamav:latest
+    build: . 
+    ports: 
+      - 3310:3310/tcp
